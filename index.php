@@ -30,14 +30,12 @@
     $user = "<Nama admin database Anda>";
     $pass = "<Password admin database Anda>";
     $db = "<Nama database Anda>";
-
     try {
         $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     } catch(Exception $e) {
         echo "Failed: " . $e;
     }
-
     if (isset($_POST['submit'])) {
         try {
             $name = $_POST['name'];
@@ -56,7 +54,6 @@
         } catch(Exception $e) {
             echo "Failed: " . $e;
         }
-
         echo "<h3>Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
